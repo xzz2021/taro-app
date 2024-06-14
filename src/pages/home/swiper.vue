@@ -1,12 +1,12 @@
 <template>
     <nut-swiper
-     :init-page="2"
+     :init-page="0"
      :auto-play="3000"
      pagination-visible
      pagination-color="#426543"
      pagination-unselected-color="#808080"
    >
-     <nut-swiper-item v-for="(item, index) in list" :key="index" style="height: 250px">
+     <nut-swiper-item v-for="(item, index) in list" :key="index" style="height: 30vh">
        <img :src="item" alt="" style="height: 100%; width: 100%" draggable="false" />
      </nut-swiper-item>
    </nut-swiper>

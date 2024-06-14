@@ -1,5 +1,5 @@
 <template>
-   <view> 购物车
+   <view> 上传报价
    </view>
 </template>
 

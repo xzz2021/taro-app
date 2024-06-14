@@ -2,7 +2,8 @@ export default defineAppConfig({
   pages: [
     // 'pages/index/index',
     'pages/home/index',
-    'pages/shop/index'
+    'pages/upload/index',
+    'pages/account/index'
   ],
   tabBar: {
     custom: true,
@@ -15,8 +16,12 @@ export default defineAppConfig({
         text: '首页',
       },
       {
-        pagePath: 'pages/shop/index',
+        pagePath: 'pages/upload/index',
         text: '购物车'
+      },
+      {
+        pagePath: 'pages/account/index',
+        text: '我的'
       },
     ],
   },

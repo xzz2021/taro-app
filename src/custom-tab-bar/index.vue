@@ -1,80 +1,44 @@
 <template>
-    <cover-view class="tab-bar">
-      <cover-view class="tab-bar-border"></cover-view>
-        <cover-view v-for="(item, index) in list" :key="index" class="tab-bar-item" @tap="switchTab(index, item.pagePath)">
-          <!-- <cover-image :src="selected === index ? item.selectedIconPath : item.iconPath" /> -->
-          <cover-view :style="{ color: selected === index ? selectedColor : color }">{{item.text}}</cover-view>
-        </cover-view>
-    </cover-view>
-  </template>
-  
-  <script setup>
-  import Taro from '@tarojs/taro'
-  import { computed }  from 'vue'
-  import { useTabbarStore } from '../store'
-  import { storeToRefs } from 'pinia'
+  <nut-tabbar v-model="activeName" @tab-switch="tabSwitch" unactive-color="#7d7e80" active-color="#1648d3">
+    <nut-tabbar-item v-for="item in List" :key="item.name" :name="item.name" :tab-title="item.title" :icon="item.icon">
+    </nut-tabbar-item>
+  </nut-tabbar>
+</template>
 
-  const store = useTabbarStore()
-  const { selected } = storeToRefs(store)
-  const {  changeSelected } = store
-  
-  const color = '#000000'
-  const selectedColor = '#DC143C'
-  const list = [
-    {
-      pagePath: '/pages/home/index',
-      text: '首页'
-    },
-    {
-      pagePath: '/pages/shop/index',
-      text: '购物车'
-    },
-  ]
-  
-  const switchTab = (index, url) => {
-    changeSelected(index)
-    Taro.switchTab({ url })
+<script lang="ts" setup>
+import { h, ref } from 'vue'
+import { Home, Category, Find, Cart, My } from '@nutui/icons-vue-taro'
+
+const activeName = ref('category')
+const List = [
+  {
+    title: '首页',
+    icon: h(Home),
+    name: 'home'
+  },
+  {
+    title: '模型库',
+    icon: h(Category),
+    name: 'category'
+  },
+  {
+    title: '上传报价',
+    icon: h(Find),
+    name: 'find'
+  },
+  {
+    title: '订单',
+    icon: Cart,
+    name: 'cart'
+  },
+  {
+    title: '我的',
+    icon: h(My),
+    name: 'my'
   }
-  
-  </script>
-  
-  <style lang="scss">
-  .tab-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: white;
-    display: flex;
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-  
-  .tab-bar-border {
-    background-color: rgba(0, 0, 0, 0.33);
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 1px;
-    transform: scaleY(0.5);
-  }
-  
-  .tab-bar-item {
-    flex: 1;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .tab-bar-item cover-image {
-    width: 54px;
-    height: 54px;
-  }
-  
-  .tab-bar-item cover-view {
-    font-size: 20px;
-  }
-  </style>
+]
+
+const tabSwitch = (item: Record<string, unknown>, index: number) => {
+  console.log(item, index)
+}
+</script>
