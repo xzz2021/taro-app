@@ -1,13 +1,13 @@
 <template>
-    <view> 上传报价 </view>
-    <div>
+    <view> 选择服务 </view>
+    <div class="selection_container">
     <!-- <nut-row>
     <nut-col v-for="(item, index) in btnArr" :span="6">
         <nut-button plain type="info" size="small">{{item.title}}</nut-button>
     </nut-col>
   </nut-row> -->
   <nut-radio-group v-model="val1" direction="horizontal">
-    <nut-radio v-for="(item, index) in btnArr" :label="index" shape="button" size="small">{{item.title}}</nut-radio>
+    <nut-radio v-for="(item, index) in btnArr" :label="index" shape="button" size="small" >{{item.title}}</nut-radio>
   </nut-radio-group>
     </div>
  </template>
@@ -25,19 +25,7 @@ const val1 = ref(0)
  </script>
  
  <style>
- .content {
-  line-height: 40px;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  background: #ff8881;
-  margin-bottom: 10px;
-}
-.light {
-  background: #ffc7c4;
-}
-
-/* .nut-radio__button--active::after{
-    color: #22b9f5; 
-} */
+ .selection_container{
+  --nut-primary-color: #1648d3; /* 设置主色调 */
+ }
  </style>
