@@ -1,25 +1,32 @@
 <template>
-    <view class="card">
+    <view class="right_card">
         <view class="content">
-          <h2 class="item_title">3D扫描</h2>
-          <p>逆向抄数 瑕疵检测</p>
+          <h2 class="item_title">{{msg.title}}</h2>
+          <p>{{ msg.description }}</p>
         </view>
   <view class="image-container">
-    <img src="https://yun3d.com/filestore/assets/app/item.png" alt="3D Scanner">
+    <img :src="msg.url" alt="3D Scanner">
   </view>
 </view>
  </template>
  
  <script setup>
- 
+ const props = defineProps({
+   msg: {
+     type: Object,
+     default: () => ({})
+   }
+ })
  </script>
  
  <style lang="scss">
- .card {
+ .right_card {
   display: flex;
   align-items: center;
   border-radius: 24px;
 //   border:  1px solid red;
+background: #ffffff;
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   margin: 20px 0;
   height: 130rpx;
@@ -41,15 +48,21 @@
 
   .content {
     flex: 10;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    justify-content: center;
     .item_title{
         font-weight: 600;
-        margin: 15px 10px;
         color: #000000;
+        margin: 0 0 5px 10px;
+    font-size: 30px;
+
     }
     p {
-        margin-left: 10px;
       font-size: 18px;
       color: #565656;
+      margin-left: 10px;
     }
   }
 }

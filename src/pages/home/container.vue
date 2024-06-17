@@ -1,8 +1,15 @@
 <template>
     <view class="container_box">
     <view class="inner_box">
-        <pricebox/>
+        <pricebox title="上传报价"/>
         <constructorbox />
+
+    </view>
+    <view class="inner_box2">
+
+        <pricebox title="经典案例"/>
+        <!-- <classiccasebox /> -->
+
     </view>
     </view>
 
@@ -18,10 +25,15 @@ import pricebox from './components/pricebox.vue'
 .container_box{
     height: calc(70vh - 110px);
     border: 1px solid red;
+    padding: 0 50px;
     .inner_box{
-    border: 1px solid red;
-    height: 60%;
-    margin: 50px;
+    // border: 1px solid red;
+    margin-top: 30px;
+    // height: 60%;
+    }
+    .inner_box2{
+    margin-top: 20px;
+
     }
 }
 </style>

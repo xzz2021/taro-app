@@ -1,12 +1,19 @@
 
 <template>
   <view class="price_container">
-    <view class="icon"></view>
-  <span>上传报价</span>
+    <view class="price_icon"></view>
+  <span>{{title}}</span>
   </view>
 </template>
 
-<script setup></script>
+<script setup>
+ const props = defineProps({
+   title: {
+     type: String,
+     default: ''
+   }
+ })
+</script>
 
 <style lang="scss">
 .price_container {
@@ -17,19 +24,19 @@
   // padding: 10px 20px;
   transition: background-color 0.3s ease;
 
-  .icon {
-    width: 12px;
-    height: 30px;
+  .price_icon {
+    width: 10px;
+    height: 32px;
     background-color: #005bff;
-    border-radius: 5px;
-    margin-right: 8px;
+    border-radius: 10px;
+    margin-right: 14px;
   }
 
   span {
-    font-size: 30px;
+    font-size: 32px;
     color: #005bff;
     font-weight: bolder;
-    line-height: 30px;
+    line-height: 32px;
   }
 }
 

@@ -5,24 +5,15 @@
  * constructorbox.vue
 -->
 <template>
-  <view class="container">
+  <view class="main_container">
     <nut-row :gutter="10">
     <nut-col :span="12">
-      <div class="content33">span:8</div>
+      <leftItem />
     </nut-col>
     <nut-col  :span="12" class="iiii" >
-    <!-- <nut-row :span="24">
-        <itembox/>
-    </nut-row>
-    <nut-row :span="24">
-      <div class="content33">span:6</div>
-    </nut-row>
-    <nut-row :span="24">
-      <div class="content33">span:6</div>
-    </nut-row> -->
-    <itembox/>
-    <itembox/>
-    <itembox/>
+    <itembox :msg="{title:'3D扫描', description: '逆向抄数 瑕疵检测', url:'https://yun3d.com/filestore/assets/app/process1.jpg'}"/>
+    <itembox :msg="{title:'3D建模', description: '虚拟数字 智能化设计', url:'https://yun3d.com/filestore/assets/app/process1.jpg'}"/>
+    <itembox :msg="{title:'CNC加工', description: '铣削(3轴/4轴/5轴)/车削', url:'https://yun3d.com/filestore/assets/app/process1.jpg'}"/>
 
     </nut-col>
   </nut-row>
@@ -32,17 +23,12 @@
 
 <script setup>
 import itembox from './itembox.vue'
+import leftItem from './leftItem.vue'
+
 </script>
 
 <style lang="scss" >
-.content33 {
-  line-height: 40px;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  background: #ff8881;
-  margin-bottom: 10px;
-}
+
 .iii{
     display: flex;
     flex-direction: column;

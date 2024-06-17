@@ -1,5 +1,5 @@
 <template>
-   <view> 
+   <view class="home_box"> 
      <xzzswiper />
      <xzzcontainer />
    </view>
@@ -12,5 +12,7 @@ import xzzcontainer from './container.vue'
 </script>
 
 <style>
-
+.home_box{
+  background: #f1f4f9;
+}
 </style>
