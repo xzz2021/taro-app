@@ -98,7 +98,7 @@
         position: relative;
         width: 60px;
         flex: 1;
-        background-color:rgb(243, 220, 16);
+        // background-color:rgb(243, 220, 16);
         margin: 10px;
     height: 90%;
     border-radius: 32px;
