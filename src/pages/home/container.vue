@@ -8,7 +8,7 @@
     <view class="inner_box2">
 
         <pricebox title="经典案例"/>
-        <!-- <classiccasebox /> -->
+        <classiccase />
 
     </view>
     </view>
@@ -17,14 +17,15 @@
 
 <script setup>
 import { ref } from 'vue'
-import constructorbox from './components/constructorbox.vue'
-import pricebox from './components/pricebox.vue'
+import constructorbox from './technology/index.vue'
+import pricebox from './pricebox.vue'
+import classiccase from './classiccase/index.vue'
 </script>
 
 <style lang="scss">
 .container_box{
     height: calc(70vh - 110px);
-    border: 1px solid red;
+    // border: 1px solid red;
     padding: 0 50px;
     .inner_box{
     // border: 1px solid red;

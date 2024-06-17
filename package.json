@@ -54,8 +54,7 @@
     "@tarojs/shared": "3.6.31",
     "@tarojs/taro": "3.6.31",
     "pinia": "^2.1.7",
-    "vue": "^3.2.40",
-    "vue3-carousel": "^0.3.3"
+    "vue": "^3.2.40"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",

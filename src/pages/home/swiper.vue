@@ -7,7 +7,7 @@
      pagination-unselected-color="#808080"
    >
      <nut-swiper-item v-for="(item, index) in list" :key="index" style="height: 30vh">
-       <img :src="item" alt="" style="height: 100%; width: 100%" draggable="false" />
+       <img :src="item.img" alt="" style="height: 100%; width: 100%" draggable="false" />
      </nut-swiper-item>
    </nut-swiper>
 
@@ -17,9 +17,9 @@
 import { ref } from 'vue'
 import { Swiper, SwiperItem } from '@nutui/nutui-taro'
 const list = ref([
-  'https://yun3d.com/filestore/assets/app/home1.jpg',
-  'https://yun3d.com/filestore/assets/app/home1.jpg',
-  'https://yun3d.com/filestore/assets/app/home1.jpg',
+  {img:'https://yun3d.com/filestore/assets/app/home1.jpg'},
+  {img:'https://yun3d.com/filestore/assets/app/home1.jpg'},
+  {img:'https://yun3d.com/filestore/assets/app/home1.jpg'},
 ])
 
 </script>
